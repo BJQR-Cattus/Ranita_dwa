@@ -1,0 +1,320 @@
+:root {
+    --bg: #07070f;
+    --green: #0ed800;
+    --blue: #0088aa;
+    --text: #f0f0f0;
+    --muted: #585a69;
+    --dark: rgba(15, 15, 30, 0.7);
+    --font: "Electrolize", "Rajdhani", Arial, sans-serif;
+    --t: all .3s ease;
+    --r: 8px;
+    --xs: .5rem;
+    --sm: 1rem;
+    --md: 1.5rem;
+    --lg: 2rem;
+    --xl: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background: var(--bg);
+    font-family: var(--font);
+    color: var(--text);
+    line-height: 1.6
+}
+
+.contact-hub {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--lg);
+    max-width: 1300px;
+    margin: var(--xl) auto;
+    padding: var(--lg);
+    border: 3px solid var(--green);
+    border-radius: var(--r);
+    box-shadow: 0 0 30px rgba(14, 216, 0, .5), 0 0 10px var(--blue);
+}
+
+.form-wrapper {
+    padding: var(--lg);
+    background: var(--dark);
+    border: 1px solid var(--blue);
+    border-radius: var(--r);
+    box-shadow: inset 0 0 10px rgba(0, 136, 170, .3);
+}
+
+.form-wrapper h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: var(--xs);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, var(--green), var(--blue));
+    background-clip: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid var(--green);
+    padding-bottom: var(--sm);
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: var(--lg);
+    font-style: italic;
+    font-size: .95rem
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--md)
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--md)
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--xs)
+}
+
+.form-group label {
+    color: var(--green);
+    font-size: .85rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--sm);
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid var(--muted);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--t);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--muted)
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 8px var(--green), inset 0 0 5px var(--blue);
+}
+
+.form-group select {
+    appearance: none;
+    cursor: pointer;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path fill="%230088AA" d="M10 3L6 9L2 3z"/></svg>') no-repeat right 10px center;
+    padding-right: 30px;
+}
+
+.form-group select option {
+    background: var(--bg);
+    color: var(--text)
+}
+
+.form-group.full-width {
+    grid-column: 1/-1
+}
+
+.btn-submit {
+    padding: 1rem;
+    margin-top: var(--md);
+    background: var(--green);
+    color: var(--bg);
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--t);
+    box-shadow: 0 0 15px var(--green);
+}
+
+.btn-submit:hover {
+    background: var(--blue);
+    color: var(--text);
+    border-color: var(--blue);
+    box-shadow: 0 0 25px var(--blue);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 20%;
+    height: 100%;
+    background: rgba(255, 255, 255, .4);
+    transform: skewX(-20deg);
+    transition: left .7s ease;
+}
+
+.btn-submit:hover .btn-shine {
+    left: 100%
+}
+
+.info-wrapper {
+    padding: var(--lg)
+}
+
+.info-wrapper h2 {
+    color: var(--blue);
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    margin-bottom: var(--lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.info-card {
+    margin-bottom: var(--md);
+    padding: var(--md);
+    background: rgba(15, 35, 35, .5);
+    border-left: 5px solid var(--green);
+    border-radius: 4px;
+    transition: var(--t);
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(14, 216, 0, .2)
+}
+
+.info-card h3 {
+    color: var(--green);
+    font-size: .95rem;
+    margin-bottom: var(--xs);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.info-card p {
+    font-size: .95rem;
+    margin: var(--xs) 0
+}
+
+.info-card .highlight {
+    color: var(--blue);
+    font-weight: bold
+}
+
+.info-card .muted {
+    color: var(--muted);
+    font-size: .85rem
+}
+
+/* Responsive */
+@media (min-width:768px) {
+    .contact-hub {
+        padding: var(--xl);
+        margin: var(--xl) auto
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .form-wrapper {
+        padding: var(--xl)
+    }
+
+    .info-wrapper h2 {
+        text-align: left
+    }
+}
+
+@media (min-width:1024px) {
+    .contact-hub {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--xl)
+    }
+
+    .form-wrapper h1 {
+        font-size: 2.5rem
+    }
+
+    .info-wrapper h2 {
+        margin-bottom: var(--xl)
+    }
+}
+
+@media (min-width:1400px) {
+    .contact-hub {
+        max-width: 1400px
+    }
+}
+
+@media (max-width:480px) {
+    .contact-hub {
+        padding: var(--md);
+        margin: var(--lg) auto;
+        gap: var(--md)
+    }
+
+    .form-wrapper,
+    .info-wrapper {
+        padding: var(--md)
+    }
+
+    .form-wrapper h1 {
+        font-size: 1.5rem;
+        letter-spacing: 2px
+    }
+
+    .subtitle {
+        font-size: .9rem
+    }
+
+    .btn-submit {
+        padding: .85rem;
+        font-size: .9rem
+    }
+
+    .info-card {
+        padding: var(--sm)
+    }
+}
+
+@media (max-width: 380px) {
+    .contact-hub {
+        width: 95%;
+        padding: 1rem;
+        margin: 1rem auto;
+        overflow-x: hidden;
+    }
+
+    .form-wrapper,
+    .info-wrapper {
+        padding: 1rem;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 0.9rem;
+    }
+}
